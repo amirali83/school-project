@@ -1,5 +1,6 @@
 from PIL import Image
 from PIL import ImageFilter
+from PIL import ImageOps
 
 def White_and_Black(img, the_name):
     img = img.convert("L")
@@ -39,6 +40,12 @@ def FLIP_LEFT_RIGHT(img, the_name):
 
 def FLIP_TOP_BOTTOM(img, the_name):
     img = img.transpose(Image.FLIP_TOP_BOTTOM)
+    img.save(str(the_name) + "_picture" + ".png")
+    img.show()
+    return
+
+def add_border(img, border, color, the_name):
+    img = ImageOps.expand(img, border = border, fill = color)
     img.save(str(the_name) + "_picture" + ".png")
     img.show()
     return

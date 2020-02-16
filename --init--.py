@@ -13,7 +13,7 @@ height = img.size[1]
 num_change = 1
 
 ######what can i do
-what_can_i_do = "hi i am the program written by amirali & ali. i can change the pictures that you want. i can: \n 1.White and black \n 2.Rotate \n 3.Simple Blur \n 4.Box Blur \n 5.Gaussian_Blur \n 6.FLIP_LEFT_RIGHT \n 7. FLIP_TOP_BOTTOM \n"
+what_can_i_do = "hi i am the program written by amirali & ali. i can change the pictures that you want. i can: \n 1.White and black \n 2.Rotate \n 3.Simple Blur \n 4.Box Blur \n 5.Gaussian_Blur \n 6.FLIP_LEFT_RIGHT \n 7. FLIP_TOP_BOTTOM \n 8.add border \n 9.Quit \n"
 print(what_can_i_do)
 
 ######running the program
@@ -58,3 +58,13 @@ while(True):
         FLIP_TOP_BOTTOM(img, num_change)
         img = Image.open(the_name_of_picture + '.png')
         num_change += 1
+
+    elif fir_com == 8:
+        border = int(input("how long do you want to be your border? \n"))
+        color = input("what calor do you want to be your border? \n").split()
+        add_border(img, border, (int(color[0]), int(color[1]), int(color[2])), num_change)
+        img = Image.open(the_name_of_picture + '.png')
+        num_change += 1
+
+    elif fir_com == 9:
+        break
